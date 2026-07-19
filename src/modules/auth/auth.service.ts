@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { User, IUser } from "../users/user.model";
+import { User, IUser } from "./user.model";
 import { generateToken } from "../../utils/generateToken";
 import { AppError } from "../../utils/AppError";
 
