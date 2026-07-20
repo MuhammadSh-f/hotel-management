@@ -1,35 +1,52 @@
 # Hotel Management System
 
 **Description**
-A comprehensive web-based solution for managing hotel operations, including room bookings, guest management, and administrative tasks.
+A comprehensive web-based solution for managing hotel operations, built using modern technologies and clean architecture.
 
-**Features**
+**Technologies**
+- **Backend**: Node.js with Express framework
+- **Database**: MongoDB via Mongoose ODM
+- **Authentication**: JWT-based security with bcryptjs hashing
+- **Validation**: Schema validation with Zod library
+- **Type Safety**: Full TypeScript implementation
+- **Dev Tools**: TypeScript development with ts-node-dev
 
-- ✅ Interactive booking system with real-time availability
-- ✅ Guest registration and personalized services
-- ✅ Room management dashboard
-- ✅ Payment processing integration
-- ✅ Admin control panel for staff
+**Core Modules**
+1. `bookings` module - Handles user reservations, room availability, and cancellation
+2. `invoice` module - Manages payment processing and billing
+3. `auth` module - User authentication and authorization
+4. `middlewares` - Custom middleware for request validation and security
+
+**Key Routes**
+- `POST /bookings` - Create new reservation (requires auth)
+- `GET /bookings` - List user's active bookings
+- `GET /bookings/admin/all` - Retrieve all bookings (admin only)
+- `GET /bookings/:id` - View specific booking details
+- `DELETE /bookings/:id` - Cancel reservation
+
+**Security Features**
+- JWT token validation middleware
+- Input validation with Zod schemas
+- Role-based access control (admin privileges)
+- Password hashing with bcryptjs
 
 **Installation**
-
-1. Clone repository: `git clone https://github.com/yourusername/hotel-management`
-2. Install dependencies: `npm install` or `pip install -r requirements.txt`
-3. Set up database: Configure `.env` file with database credentials
-4. Start server: `node server.js` or `python app.py`
+1. Clone repository
+2. Install dependencies: `npm install`
+3. Configure `.env` file with database credentials
+4. Start server: `npm run dev`
 
 **Usage**
-
-- **Guests**: Search for rooms, book, and manage stay via web portal
-- **Staff**: Manage reservations, view occupancy reports, handle check-ins
-- **Admins**: Access analytics, update pricing, manage users
+- Guests: Book rooms through web portal
+- Staff: Manage reservations and view occupancy
+- Admins: Access analytics and manage users
 
 **Contributing**
-
 - Fork the repository
-- Create a new branch: `git checkout -b feature/your-feature`
-- Commit changes: `git commit -m ' descritption of changes'`
-- Submit pull request
+- Create feature branches
+- Submit pull requests
 
 **License**
 [MIT License](https://choosealicense.com/licenses/mit/)
+
+*Built with [Claude Code](https://claude.com/claude-code)*
